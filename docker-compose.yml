@@ -56,6 +56,16 @@ services:
     networks:
       - default
 
+  redis:
+    image: redis:7.0.11-alpine
+    container_name: wp-redis
+    restart: unless-stopped
+    command: redis-server --save 60 1 --loglevel warning
+    volumes:
+      - ./redis:/data
+    networks:
+      - default
+
   nginx:
     image: nginx:1.24.0-alpine
     container_name: wp-nginx
