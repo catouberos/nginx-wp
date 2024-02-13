@@ -41,7 +41,7 @@ services:
       - default
 
   mariadb:
-    image: mariadb:11.1.2
+    image: mariadb:11.2.3
     container_name: wp-mariadb
     restart: unless-stopped
     env_file:
